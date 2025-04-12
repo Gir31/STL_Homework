@@ -15,6 +15,10 @@ public:
 	Player(const Player&);
 	Player& operator=(const Player&);
 
+	// 이동 생성자 & 이동할당연산자
+	Player(Player&&);
+	Player& operator=(Player&&);
+
 	// 화면 출력
 	void show() const;
 

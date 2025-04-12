@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <print>
+#include <iomanip>
 
 //===========================================================================
 // 생성자
@@ -52,6 +53,30 @@ Player& Player::operator=(const Player& other)
 	return *this;
 }
 
+// 이동 생성자 & 이동할당연산자
+Player::Player(Player&& other)
+	: name{ other.name }, score{ other.score }, id{ other.id }, num{ other.num }
+{
+	p.reset(other.p.release());
+	other.num = 0;
+}
+
+Player& Player::operator=(Player&& other)
+{
+	if (this == &other)
+		return *this;
+
+	name = other.name;
+	score = other.score;
+	id = other.id;
+	num = other.num;
+
+	p.reset(other.p.release());
+	other.num = 0;
+
+	return *this;
+}
+
 
 // 객체 정보를 보여주는 코드
 void Player::show() const
@@ -85,5 +110,6 @@ size_t Player::getId() const
 // 
 std::ostream& operator<<(std::ostream& os, const Player& player)
 {
-
+	return os 
+		<< std::left << std::setw(20) << player.name << player.id << '\n';
 }

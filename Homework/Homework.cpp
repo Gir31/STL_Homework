@@ -84,10 +84,15 @@ int main()
 			}
 		}
 
-		for (Player& player : sameId)
-			player.show();
+		/*for (Player& player : sameId)
+			player.show();*/
 
 		std::cout << "[문제 3 - 1]동일 ID 객체 찾아 텍스트파일로 저장" << std::endl;
+
+		std::ofstream out{ "같은아이디.txt", std::ios::app };
+
+		for (Player& player : sameId)
+			out << player;
 
 		std::cout << "[문제 3 - 2]ID 같은 객체의 개수 출력" << std::endl;
 
