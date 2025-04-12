@@ -17,6 +17,7 @@ int main()
 
 	std::string name;
 	int score;
+	int trash;
 	size_t id;
 	size_t num;
 	std::unique_ptr<char[]> p{};
@@ -33,9 +34,11 @@ int main()
 		case 1:
 			in.read((char*)&score, sizeof(int));
 			std::cout << "score : " << score << std::endl;
+
+			in.read((char*)&trash, sizeof(int));
 			break;
 		case 2:
-			in.read((char*)&id, sizeof(int));
+			in.read((char*)&id, sizeof(size_t));
 			std::cout << "id : " << id << std::endl;
 			break;
 		case 3:
