@@ -41,7 +41,7 @@ void Player::show()
 }
 
 // 객체의 score값을 가져오는 코드
-int Player::getScore()
+int Player::getScore() const
 {
 	return score;
 }

@@ -7,7 +7,7 @@ class Player {
 public:
 	void read(std::istream&);
 	void show();
-	int getScore();
+	int getScore() const;
 private:
 	std::string name;
 	int score;
