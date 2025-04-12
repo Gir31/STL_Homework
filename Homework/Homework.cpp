@@ -21,10 +21,15 @@ int main()
 
 	{
 		long long sum {std::numeric_limits<int>::min()};
+		long long average{0};
 
 		for (Player& player : players)
 			sum += player.getScore();
 
-		std::cout << sum << std::endl;
+		std::cout << "ÃÑÇÕ - " << sum << std::endl;
+
+		average = sum / players.size();
+
+		std::cout << "Æò±Õ - " << average << std::endl;
 	};
 }
