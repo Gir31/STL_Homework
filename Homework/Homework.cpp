@@ -23,15 +23,15 @@ int main()
 
 	{
 		int maxValue{ std::numeric_limits<int>::min() };
-		long long sum {std::numeric_limits<int>::min()};
+		long long total = std::accumulate(players.begin(), players.end(), 0LL,
+			[](long long sum, const Player& p) {
+				return sum + p.getScore();
+			});
 		long long average{0};
 
-		for (Player& player : players)
-			sum += player.getScore();
+		std::cout << "ÃÑÇÕ - " << total << std::endl;
 
-		std::cout << "ÃÑÇÕ - " << sum << std::endl;
-
-		average = sum / players.size();
+		average = total / players.size();
 
 		std::cout << "Æò±Õ - " << average << std::endl;
 
