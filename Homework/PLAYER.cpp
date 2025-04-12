@@ -104,10 +104,16 @@ void Player::sortChar() const
 // p 안의 a 갯수 count
 bool Player::aCountChar() const
 {
+	return (num > 9 && p[0] == p[9]);
+}
+
+bool Player::aCountChar2() const
+{
 	int count = std::count(p.get(), p.get() + num, 'a');
 
 	return count > 9;
 }
+
 
 // 객체의 score값을 가져오는 코드
 int Player::getScore() const

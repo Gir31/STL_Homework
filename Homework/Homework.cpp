@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <print>
 #include <vector>
+#include <chrono>
 #include "PLAYER.h"
 
 std::array<Player, 250'0000> players;
@@ -101,17 +102,27 @@ int main()
 	{
 		std::cout << "[문제 4 - 1]메모리에 저장된 p 오름차순 정렬" << std::endl;
 
-		int aCount{ std::numeric_limits<int>::min()};
-
+		int aCount{ 0 };
+		auto b = std::chrono::high_resolution_clock::now();
 		for (const Player& player : players) {
 			player.sortChar();
-			if (player.aCountChar()) {
+			if (player.aCountChar())
 				++aCount;
-				std::cout << "a가 10개 이상" << std::endl;
-			}
 		}
+		auto e = std::chrono::high_resolution_clock::now();
 
-		std::cout << aCount << std::endl;
+		std::cout << "걸린시간 : " << e - b << " / " << aCount << std::endl;
+
+		aCount = 0 ;
+		b = std::chrono::high_resolution_clock::now();
+		for (const Player& player : players) {
+			player.sortChar();
+			if (player.aCountChar2())
+				++aCount;
+		}
+		e = std::chrono::high_resolution_clock::now();
+
+		std::cout << "걸린시간 : " << e - b << " / " << aCount << std::endl;
 	}
 	
 }

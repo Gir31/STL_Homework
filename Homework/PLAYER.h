@@ -27,6 +27,7 @@ public:
 
 	// p 안의 a 갯수 count
 	bool aCountChar() const;
+	bool aCountChar2() const;
 
 	// 변수 가져오기
 	int getScore() const;
