@@ -24,41 +24,9 @@ int main()
 	std::unique_ptr<char[]> p{};
 
 
-	int a{ 0 };
-	while (true) {
-		switch (a % 5) {
-		case 0:
-			std::cout << a / 5 << "¹øÂ° °´Ã¼" << std::endl;
-			in.read((char*)&name, sizeof(std::string));
-			std::cout << "name : " << name << std::endl;
-			break;
-		case 1:
-			in.read((char*)&score, sizeof(int));
-			std::cout << "score : " << score << std::endl;
+	for (Player& player : players)
+		player.read(in);
 
-			in.read((char*)&trash_4, sizeof(int));
-			break;
-		case 2:
-			in.read((char*)&id, sizeof(size_t));
-			std::cout << "id : " << id << std::endl;
-			break;
-		case 3:
-			in.read((char*)&num, sizeof(size_t));
-			std::cout << "num : " << num << std::endl;
-			break;
-		case 4:
-			in.read((char*)&trash_8, sizeof(size_t));
-
-			p.reset();
-			p = std::make_unique<char[]>(num);
-			in.read(p.get(), num);
-
-			for (int i = 0; i < num; ++i)
-				std::cout << p[i];
-
-			std::cout << std::endl;
-			break;
-		}
-		++a;
-	}
+	for (int i = 0; i < 100; ++i)
+		players[i].show();
 }
