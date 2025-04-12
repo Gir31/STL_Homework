@@ -22,6 +22,9 @@ public:
 	// 화면 출력
 	void show() const;
 
+	// p 정렬
+	void sortChar() const;
+
 	// 변수 가져오기
 	int getScore() const;
 	size_t getId() const;

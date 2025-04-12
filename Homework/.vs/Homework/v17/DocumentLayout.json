@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{77B7626E-343E-4E35-9278-6E89C153774A}|Homework.vcxproj|D:\\github_my\\STL_Homework\\Homework\\PLAYER.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{77B7626E-343E-4E35-9278-6E89C153774A}|Homework.vcxproj|solutionrelative:PLAYER.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B7626E-343E-4E35-9278-6E89C153774A}|Homework.vcxproj|D:\\github_my\\STL_Homework\\Homework\\PLAYER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77B7626E-343E-4E35-9278-6E89C153774A}|Homework.vcxproj|solutionrelative:PLAYER.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,7 +32,7 @@
               "RelativeDocumentMoniker": "PLAYER.cpp",
               "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.cpp",
               "RelativeToolTip": "PLAYER.cpp",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHAAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-12T16:02:21.912Z",
               "EditorCaption": ""
@@ -41,9 +45,28 @@
               "RelativeDocumentMoniker": "Homework.cpp",
               "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\Homework.cpp",
               "RelativeToolTip": "Homework.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAF4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAGYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-12T11:26:57.196Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 171,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PLAYER.h",
+              "DocumentMoniker": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.h",
+              "RelativeDocumentMoniker": "PLAYER.h",
+              "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.h",
+              "RelativeToolTip": "PLAYER.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-12T17:12:56.635Z",
               "EditorCaption": ""
             }
           ]

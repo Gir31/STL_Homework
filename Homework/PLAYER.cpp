@@ -4,6 +4,7 @@
 #include <string>
 #include <print>
 #include <iomanip>
+#include <algorithm>
 
 //===========================================================================
 // 생성자
@@ -92,6 +93,12 @@ void Player::show() const
 
 	std::cout <<  std::endl;
 	std::cout << "----------------------------------------------------------------------------" << std::endl;
+}
+
+// p 정렬
+void Player::sortChar() const
+{
+	std::sort(p.get(), p.get() + num);
 }
 
 // 객체의 score값을 가져오는 코드

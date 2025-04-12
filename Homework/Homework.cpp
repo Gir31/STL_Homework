@@ -97,5 +97,11 @@ int main()
 		std::cout << "[문제 3 - 2]ID 같은 객체의 개수 출력" << std::endl;
 
 	}
+
+	{
+		std::cout << "[문제 4 - 1]메모리에 저장된 p 오름차순 정렬" << std::endl;
+		for (const Player& player : players)
+			player.sortChar();
+	}
 	
 }
