@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <print>
 #include <vector>
-#include <unordered_set>
 #include "PLAYER.h"
 
 std::array<Player, 250'0000> players;
@@ -70,31 +69,20 @@ int main()
 	}
 	
 	{
-		std::unordered_set<size_t> handledIds;		// 중복 방지
-		std::vector<Player> sameId;
-
-		for (Player& player : players) {
-			size_t targetId = player.getId();
-
-			if (handledIds.contains(targetId)) continue;
-
-			int count = std::count_if(players.begin(), players.end(),
-				[targetId](const Player& p) { return p.getId() == targetId; });
-
-			if (count > 1) {
-				std::copy_if(players.begin(), players.end(), std::back_inserter(sameId),
-					[targetId](const Player& p) {
-						return p.getId() == targetId;
-					});
-
-				handledIds.insert(targetId);
-			}
-		}
-
-		std::sort(sameId.begin(), sameId.end(), 
+		std::sort(players.begin(), players.end(),
 			[](const Player& a, const Player& b) {
 				return a.getId() < b.getId();
 			});
+
+		std::vector<Player> sameId;
+
+		for (size_t i = 0; i < players.size() - 1; ++i) {
+			if (players[i].getId() == players[i + 1].getId()) {
+				if (sameId.empty() || sameId.back().getId() != players[i].getId()) 
+					sameId.push_back(players[i]);
+				sameId.push_back(players[i + 1]);
+			}
+		}
 
 		for (Player& player : sameId)
 			player.show();
