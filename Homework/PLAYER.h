@@ -25,6 +25,9 @@ public:
 	// p 정렬
 	void sortChar() const;
 
+	// p 안의 a 갯수 count
+	bool aCountChar() const;
+
 	// 변수 가져오기
 	int getScore() const;
 	size_t getId() const;

@@ -100,8 +100,18 @@ int main()
 
 	{
 		std::cout << "[문제 4 - 1]메모리에 저장된 p 오름차순 정렬" << std::endl;
-		for (const Player& player : players)
+
+		int aCount{ std::numeric_limits<int>::min()};
+
+		for (const Player& player : players) {
 			player.sortChar();
+			if (player.aCountChar()) {
+				++aCount;
+				std::cout << "a가 10개 이상" << std::endl;
+			}
+		}
+
+		std::cout << aCount << std::endl;
 	}
 	
 }
