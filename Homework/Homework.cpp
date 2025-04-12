@@ -35,12 +35,24 @@ int main()
 
 		std::cout << "평균 - " << average << std::endl;
 
-		auto pos = std::max_element(players.begin(), players.end(), 
+		// 제일 먼저 나온 최댓값 구하기
+		/*auto pos = std::max_element(players.begin(), players.end(),
 			[](const Player& a, const Player& b) {
 				return a.getScore() < b.getScore();
 			});
 		
 		if (pos != players.end())
-			pos->show();
+			pos->show();*/
+
+		// 중복 최댓값 구하기
+		maxValue = std::max_element(players.begin(), players.end(),
+			[](const Player& a, const Player& b) {
+				return a.getScore() < b.getScore();
+			})->getScore();
+
+		for (Player& player : players) {
+			if (player.getScore() == maxValue)
+				player.show();
+		}
 	}
 }
