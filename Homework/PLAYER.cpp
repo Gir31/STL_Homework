@@ -5,6 +5,8 @@
 #include <print>
 
 //===========================================================================
+// 생성자
+Player::Player() = default;
 // 바이너리 파일에서 읽어와 객체에 넣는 코드
 void Player::read(std::istream& is) 
 {
@@ -24,8 +26,17 @@ void Player::read(std::istream& is)
 	is.read(p.get(), num);
 }
 
+// 복사 생성자
+Player::Player(const Player& other) 
+	: name{other.name}, score{ other.score }, id{ other.id }, num {other.num}
+{
+	p.reset();
+	p = std::make_unique<char[]>(num);
+	memcpy(p.get(), other.p.get(), num);
+}
+
 // 객체 정보를 보여주는 코드
-void Player::show()
+void Player::show() const
 {
 	std::cout << "----------------------------------------------------------------------------" << std::endl;
 	std::print("이름:{:>15} | 아이디:{:>8} | 점수:{:>15} | 자원수:{:>4}",

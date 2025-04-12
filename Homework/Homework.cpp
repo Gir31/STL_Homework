@@ -4,6 +4,7 @@
 #include <numeric>
 #include <algorithm>
 #include <print>
+#include <vector>
 #include "PLAYER.h"
 
 std::array<Player, 250'0000> players;
@@ -61,13 +62,31 @@ int main()
 				return a.getScore() < b.getScore();
 			})->getScore();
 
-		for (Player& player : players) {
+		for (const Player& player : players) {
 			if (player.getScore() == maxValue)
 				player.show();
 		}
 	}
 	
 	{
+		std::vector<Player> sameId;
+
+		for (Player& player : players) {
+			size_t targetId = player.getId();
+			int count = std::count_if(players.begin(), players.end(),
+				[targetId](const Player& p) { return p.getId() == targetId; });
+
+			if (count > 1) {
+				std::copy_if(players.begin(), players.end(), std::back_inserter(sameId),
+					[targetId](const Player& p) {
+						return p.getId() == targetId;
+					});
+
+				for (const Player& p : sameId)
+					p.show();
+			}
+		}
+
 		std::cout << "[문제 3 - 1]동일 ID 객체 찾아 텍스트파일로 저장" << std::endl;
 
 		std::cout << "[문제 3 - 2]ID 같은 객체의 개수 출력" << std::endl;

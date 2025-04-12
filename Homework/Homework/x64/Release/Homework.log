@@ -1,7 +1,9 @@
 ﻿  Homework.cpp
+D:\github_my\STL_Homework\Homework\Homework.cpp(76,14): warning C4244: '초기화 중': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  PLAYER.cpp
   코드를 생성하고 있습니다.
-  3 of 894 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
+  90 of 968 functions ( 9.3%) were compiled, the rest were copied from previous compilation.
+    53 functions were new in current compilation
+    44 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
   Homework.vcxproj -> D:\github_my\STL_Homework\Homework\x64\Release\Homework.exe
