@@ -26,7 +26,7 @@ void Player::read(std::istream& is)
 	is.read(p.get(), num);
 }
 
-// 복사 생성자
+// 복사 생성자 & 복사할당연산자
 Player::Player(const Player& other) 
 	: name{other.name}, score{ other.score }, id{ other.id }, num {other.num}
 {
@@ -34,6 +34,24 @@ Player::Player(const Player& other)
 	p = std::make_unique<char[]>(num);
 	memcpy(p.get(), other.p.get(), num);
 }
+
+Player& Player::operator=(const Player& other)
+{
+	if (this == &other)
+		return *this;
+
+	name = other.name;
+	score = other.score;
+	id = other.id;
+	num = other.num;
+
+	p.reset();
+	p = std::make_unique<char[]>(num);
+	memcpy(p.get(), other.p.get(), num);
+
+	return *this;
+}
+
 
 // 객체 정보를 보여주는 코드
 void Player::show() const

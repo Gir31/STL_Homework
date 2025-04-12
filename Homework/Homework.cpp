@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <print>
 #include <vector>
+#include <unordered_set>
 #include "PLAYER.h"
 
 std::array<Player, 250'0000> players;
@@ -69,10 +70,14 @@ int main()
 	}
 	
 	{
+		std::unordered_set<size_t> handledIds;		// 중복 방지
 		std::vector<Player> sameId;
 
 		for (Player& player : players) {
 			size_t targetId = player.getId();
+
+			if (handledIds.contains(targetId)) continue;
+
 			int count = std::count_if(players.begin(), players.end(),
 				[targetId](const Player& p) { return p.getId() == targetId; });
 
@@ -82,10 +87,17 @@ int main()
 						return p.getId() == targetId;
 					});
 
-				for (const Player& p : sameId)
-					p.show();
+				handledIds.insert(targetId);
 			}
 		}
+
+		std::sort(sameId.begin(), sameId.end(), 
+			[](const Player& a, const Player& b) {
+				return a.getId() < b.getId();
+			});
+
+		for (Player& player : sameId)
+			player.show();
 
 		std::cout << "[문제 3 - 1]동일 ID 객체 찾아 텍스트파일로 저장" << std::endl;
 

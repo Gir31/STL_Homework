@@ -11,8 +11,9 @@ public:
 	// 파일에서 복사
 	void read(std::istream&);
 
-	// 복사 생성자
+	// 복사 생성자 & 복사할당연산자
 	Player(const Player&);
+	Player& operator=(const Player&);
 
 	// 화면 출력
 	void show() const;
