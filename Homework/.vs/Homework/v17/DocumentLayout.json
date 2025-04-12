@@ -3,9 +3,6 @@
   "WorkspaceRootPath": "D:\\github_my\\STL_Homework\\Homework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\throw_bad_alloc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{77B7626E-343E-4E35-9278-6E89C153774A}|Homework.vcxproj|D:\\github_my\\STL_Homework\\Homework\\Homework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{77B7626E-343E-4E35-9278-6E89C153774A}|Homework.vcxproj|solutionrelative:Homework.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -25,22 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 171,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "throw_bad_alloc.cpp",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\throw_bad_alloc.cpp",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\throw_bad_alloc.cpp",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAtwCIAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-12T11:44:59.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PLAYER.cpp",
               "DocumentMoniker": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.cpp",
               "RelativeDocumentMoniker": "PLAYER.cpp",
@@ -53,25 +39,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "PLAYER.h",
               "DocumentMoniker": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.h",
               "RelativeDocumentMoniker": "PLAYER.h",
               "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.h",
               "RelativeToolTip": "PLAYER.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwsAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-12T11:27:41.27Z"
+              "WhenOpened": "2025-04-12T11:27:41.27Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Homework.cpp",
               "DocumentMoniker": "D:\\github_my\\STL_Homework\\Homework\\Homework.cpp",
               "RelativeDocumentMoniker": "Homework.cpp",
               "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\Homework.cpp",
               "RelativeToolTip": "Homework.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCYAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwCUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-12T11:26:57.196Z",
               "EditorCaption": ""

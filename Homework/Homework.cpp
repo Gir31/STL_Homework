@@ -35,7 +35,7 @@ int main()
 			std::cout << "score : " << score << std::endl;
 			break;
 		case 2:
-			in.read((char*)&id, sizeof(size_t));
+			in.read((char*)&id, sizeof(int));
 			std::cout << "id : " << id << std::endl;
 			break;
 		case 3:
