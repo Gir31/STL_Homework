@@ -17,9 +17,10 @@ int main()
 
 	std::string name;
 	int score;
-	int trash;
+	int trash_4;
 	size_t id;
 	size_t num;
+	size_t trash_8;
 	std::unique_ptr<char[]> p{};
 
 
@@ -35,7 +36,7 @@ int main()
 			in.read((char*)&score, sizeof(int));
 			std::cout << "score : " << score << std::endl;
 
-			in.read((char*)&trash, sizeof(int));
+			in.read((char*)&trash_4, sizeof(int));
 			break;
 		case 2:
 			in.read((char*)&id, sizeof(size_t));
@@ -46,6 +47,8 @@ int main()
 			std::cout << "num : " << num << std::endl;
 			break;
 		case 4:
+			in.read((char*)&trash_8, sizeof(size_t));
+
 			p.reset();
 			p = std::make_unique<char[]>(num);
 			in.read(p.get(), num);
