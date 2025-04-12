@@ -15,5 +15,5 @@ int main()
 	}
 	std::cout << "[파일]	파일 읽기 성공" << std::endl;
 
-
+	in.read((char*)players.data(), players.size() * sizeof(Player));
 }
