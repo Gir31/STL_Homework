@@ -18,10 +18,19 @@ int main()
 	}
 	std::cout << "[파일]	파일 읽기 성공" << std::endl;
 
+	std::cout << "[저장]		Player 객체에 메모리 저장" << std::endl;
 	for (Player& player : players)
 		player.read(in);
 
+	
 	{
+		std::cout << "[문제 1]가장 마지막 Player 출력" << std::endl;
+		(players.end() - 1)->show();
+	}
+	
+	{
+		std::cout << "[문제 2 - 1]Player의 평균 출력" << std::endl;
+
 		int maxValue{ std::numeric_limits<int>::min() };
 		long long total = std::accumulate(players.begin(), players.end(), 0LL,
 			[](long long sum, const Player& p) {
@@ -44,6 +53,8 @@ int main()
 		if (pos != players.end())
 			pos->show();*/
 
+		std::cout << "[문제 2 - 2]점수가 가장 큰 Player 출력" << std::endl;
+
 		// 중복 최댓값 구하기
 		maxValue = std::max_element(players.begin(), players.end(),
 			[](const Player& a, const Player& b) {
@@ -55,4 +66,12 @@ int main()
 				player.show();
 		}
 	}
+	
+	{
+		std::cout << "[문제 3 - 1]동일 ID 객체 찾아 텍스트파일로 저장" << std::endl;
+
+		std::cout << "[문제 3 - 2]ID 같은 객체의 개수 출력" << std::endl;
+
+	}
+	
 }

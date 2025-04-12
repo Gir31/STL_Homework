@@ -8,6 +8,7 @@ public:
 	void read(std::istream&);
 	void show();
 	int getScore() const;
+	size_t getId() const;
 private:
 	std::string name;
 	int score;
