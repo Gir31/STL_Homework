@@ -1,6 +1,9 @@
 #include <iostream>
 #include <fstream>
+#include <array>
 #include "PLAYER.h"
+
+std::array<Player, 250'0000> players;
 
 int main()
 {
@@ -10,5 +13,7 @@ int main()
 		std::cout << "[파일]	파일 읽기 실패" << std::endl;
 		return 2021184002;
 	}
+	std::cout << "[파일]	파일 읽기 성공" << std::endl;
+
 
 }
