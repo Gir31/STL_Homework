@@ -97,20 +97,24 @@ int main()
 
 		std::cout << "[문제 3 - 2]ID 같은 객체의 개수 출력" << std::endl;
 
+		std::println("id가 같은 Player: {:8}", sameId.size());
+
+
 	}
 
 	{
-		std::cout << "[문제 4 - 1]메모리에 저장된 p 오름차순 정렬" << std::endl;
+		std::cout << "[문제 4]메모리에 저장된 p 오름차순 정렬 후 'a'가 10글자 이상인 Player 출력" << std::endl;
 
 		int aCount{ 0 };
-		auto b = std::chrono::high_resolution_clock::now();
 		for (const Player& player : players) {
 			player.sortChar();
 			if (player.aCountChar())
 				++aCount;
 		}
-		auto e = std::chrono::high_resolution_clock::now();
-		std::cout << "걸린시간 : " << e - b << " / " << aCount << std::endl;
+		std::println("메모리에 저장된 p중 'a'가 10개 이상인 Player: {:8}", aCount);
 	}
 	
+	{
+
+	}
 }
