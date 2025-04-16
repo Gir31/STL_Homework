@@ -82,17 +82,20 @@ Player& Player::operator=(Player&& other)
 // 객체 정보를 보여주는 코드
 void Player::show() const
 {
-	std::cout << "----------------------------------------------------------------------------" << std::endl;
+	std::cout << "\033[32m" << "----------------------------------------------------------------------------" << "\033[0m" << std::endl;
 	std::print("이름:{:>15} | 아이디:{:>8} | 점수:{:>15} | 자원수:{:>4}",
 		name, id, score, num);
 	std::cout << std::endl;
 
-	std::cout << "저장된 글자" << std::endl;
-	for (int i = 0; i < num; ++i)
+	std::cout << "\033[32m" << "저장된 글자" << "\033[0m";
+	for (int i = 0; i < num; ++i) {
+		if (i % 75 == 0)
+			std::cout << std::endl;
 		std::cout << p[i];
+	}
 
 	std::cout <<  std::endl;
-	std::cout << "----------------------------------------------------------------------------" << std::endl;
+	std::cout << "\033[32m" << "----------------------------------------------------------------------------" << "\033[0m" << std::endl;
 }
 
 // p 정렬
@@ -119,6 +122,11 @@ int Player::getScore() const
 size_t Player::getId() const
 {
 	return id;
+}
+// 객체의 name값을 가져오는 코드
+std::string Player::getName() const
+{
+	return name;
 }
 //===========================================================================
 

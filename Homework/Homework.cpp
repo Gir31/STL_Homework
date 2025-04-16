@@ -24,14 +24,13 @@ int main()
 	for (Player& player : players)
 		player.read(in);
 
-	
 	{
-		std::cout << "[문제 1]가장 마지막 Player 출력" << std::endl;
+		std::cout << "\033[31m" << "\n[문제 1]" << "\033[0m" << "가장 마지막 Player 출력\n" << std::endl;
 		(players.end() - 1)->show();
 	}
 	
 	{
-		std::cout << "[문제 2 - 1]Player의 평균 출력" << std::endl;
+		std::cout << "\033[31m" << "\n[문제 2 - 1]" << "\033[0m" << "Player의 평균 출력\n" << std::endl;
 
 		int maxValue{ std::numeric_limits<int>::min() };
 		long long total = std::accumulate(players.begin(), players.end(), 0LL,
@@ -46,16 +45,7 @@ int main()
 
 		std::cout << "평균 - " << average << std::endl;
 
-		// 제일 먼저 나온 최댓값 구하기
-		/*auto pos = std::max_element(players.begin(), players.end(),
-			[](const Player& a, const Player& b) {
-				return a.getScore() < b.getScore();
-			});
-		
-		if (pos != players.end())
-			pos->show();*/
-
-		std::cout << "[문제 2 - 2]점수가 가장 큰 Player 출력" << std::endl;
+		std::cout << "\033[31m" << "\n[문제 2 - 2]" << "\033[0m" << "점수가 가장 큰 Player 출력\n" << std::endl;
 
 		// 중복 최댓값 구하기
 		maxValue = std::max_element(players.begin(), players.end(),
@@ -88,14 +78,14 @@ int main()
 		/*for (Player& player : sameId)
 			player.show();*/
 
-		std::cout << "[문제 3 - 1]동일 ID 객체 찾아 텍스트파일로 저장" << std::endl;
+		std::cout << "\033[31m" << "\n[문제 3 - 1]" << "\033[0m" << "동일 ID 객체 찾아 텍스트파일로 저장\n" << std::endl;
 
 		std::ofstream out{ "같은아이디.txt", std::ios::app };
 
 		for (Player& player : sameId)
 			out << player;
 
-		std::cout << "[문제 3 - 2]ID 같은 객체의 개수 출력" << std::endl;
+		std::cout << "\033[31m" << "\n[문제 3 - 2]" << "\033[0m" << "ID 같은 객체의 개수 출력\n" << std::endl;
 
 		std::println("id가 같은 Player: {:8}", sameId.size());
 
@@ -103,7 +93,7 @@ int main()
 	}
 
 	{
-		std::cout << "[문제 4]메모리에 저장된 p 오름차순 정렬 후 'a'가 10글자 이상인 Player 출력" << std::endl;
+		std::cout << "\033[31m" << "\n[문제 4]" << "\033[0m" << "메모리에 저장된 p 오름차순 정렬 후 'a'가 10글자 이상인 Player 출력\n" << std::endl;
 
 		int aCount{ 0 };
 		for (const Player& player : players) {
@@ -113,8 +103,124 @@ int main()
 		}
 		std::println("메모리에 저장된 p중 'a'가 10개 이상인 Player: {:8}", aCount);
 	}
+
 	
 	{
+		size_t targetId;
+		std::vector<Player> targetPlayer;										// 찾아낸 Player
+		std::vector<Player> frontPlayer;										// targetPlayer 앞의 Player
+		std::vector<Player> backPlayer;											// targetPlayer 뒤의 Player
 
+		std::cout << "\033[31m" << "\n[문제 5]\n" << "\033[0m" << std::endl;
+
+		while (true) {
+			// vector 리셋
+			targetPlayer.clear();												
+			frontPlayer.clear();
+			backPlayer.clear();
+
+			// search
+			std::cout << "찾고싶은 id 입력: ";
+			std::cin >> targetId;
+
+			auto startTime = std::chrono::high_resolution_clock::now();
+			// 측정하고 싶은 코드--------------------------------------
+			//
+
+			// ID 순 정렬 후 Target 및 앞뒤 Player 출력
+			//
+			std::cout << "\n\nid 정렬 후 Target Player 출력" << std::endl;
+			std::sort(players.begin(), players.end(),
+				[](const Player& a, const Player& b) {
+					return a.getId() < b.getId();
+				});
+			
+			auto it = players.begin();
+
+			while ((it = std::find_if(it, players.end(), [targetId](const Player& player) {
+				return player.getId() == targetId;
+				})) != players.end()) {
+				if (it != players.begin()) {
+					std::cout << "\033[33m" << "[Front Player]" << std::endl;
+					(it - 1)->show();
+				}
+
+				std::cout << "\033[31m" << "[Target Player]" << std::endl;
+				it->show();
+
+				if (it != players.end()) {
+					std::cout << "\033[33m" << "[Back Player]" << "\033[0m" << std::endl;
+					(it + 1)->show();
+				}
+
+				std::cout << std::endl;
+				++it;
+			}
+
+			// name 순 정렬 후 Target 및 앞뒤 Player 출력
+			//
+			std::cout << "\n\nname 정렬 후 Target Player 출력" << std::endl;
+			std::sort(players.begin(), players.end(),
+				[](const Player& a, const Player& b) {
+					return std::lexicographical_compare(a.getName().begin(), a.getName().end(), b.getName().begin(), b.getName().end());
+				});
+
+			it = players.begin();
+
+			while ((it = std::find_if(it, players.end(), [targetId](const Player& player) {
+				return player.getId() == targetId;
+				})) != players.end()) {
+				if (it != players.begin()) {
+					std::cout << "\033[33m" << "[Front Player]" << std::endl;
+					(it - 1)->show();
+				}
+
+				std::cout << "\033[31m" << "[Target Player]" << std::endl;
+				it->show();
+
+				if (it != players.end()) {
+					std::cout << "\033[33m" << "[Back Player]" << "\033[0m" << std::endl;
+					(it + 1)->show();
+				}
+
+				std::cout << std::endl;
+				++it;
+			}
+
+			// score 순 정렬 후 Target 및 앞뒤 Player 출력
+			//
+			std::cout << "\n\nscore 정렬 후 Target Player 출력" << std::endl;
+			std::sort(players.begin(), players.end(),
+				[](const Player& a, const Player& b) {
+					return a.getScore() < b.getScore();
+				});
+
+			it = players.begin();
+
+			while ((it = std::find_if(it, players.end(), [targetId](const Player& player) {
+				return player.getId() == targetId;
+				})) != players.end()) {
+				if (it != players.begin()) {
+					std::cout << "\033[33m" << "[Front Player]" << std::endl;
+					(it - 1)->show();
+				}
+
+				std::cout << "\033[31m" << "[Target Player]" << std::endl;
+				it->show();
+
+				if (it != players.end()) {
+					std::cout << "\033[33m" << "[Back Player]" << "\033[0m" << std::endl;
+					(it + 1)->show();
+				}
+
+				std::cout << std::endl;
+				++it;
+			}
+
+			// 
+			//---------------------------------------------------------
+			auto endTime = std::chrono::high_resolution_clock::now();
+			std::cout << "걸린시간: " << endTime - startTime << std::endl;
+		}
 	}
 }
