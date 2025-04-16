@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 class Player {
 public:
@@ -27,12 +28,11 @@ public:
 
 	// p 안의 a 갯수 count
 	bool aCountChar() const;
-	bool aCountChar2() const;
 
 	// 변수 가져오기
-	int getScore() const;
-	size_t getId() const;
-	std::string getName() const;
+	const int getScore() const;
+	const size_t getId() const;
+	const std::string getName() const;
 private:
 	std::string name;
 	int score;
@@ -42,3 +42,5 @@ private:
 
 	friend std::ostream& operator<<(std::ostream&, const Player&);
 };
+
+void findPlayerById(const std::vector<Player*>&, const size_t&);

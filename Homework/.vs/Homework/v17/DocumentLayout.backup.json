@@ -22,26 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 171,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PLAYER.cpp",
-              "DocumentMoniker": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.cpp",
-              "RelativeDocumentMoniker": "PLAYER.cpp",
-              "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.cpp",
-              "RelativeToolTip": "PLAYER.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-12T16:02:21.912Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 171,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -51,9 +32,10 @@
               "RelativeDocumentMoniker": "PLAYER.h",
               "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.h",
               "RelativeToolTip": "PLAYER.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-12T17:12:56.635Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
@@ -64,9 +46,22 @@
               "RelativeDocumentMoniker": "Homework.cpp",
               "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\Homework.cpp",
               "RelativeToolTip": "Homework.cpp",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHYAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-12T11:26:57.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PLAYER.cpp",
+              "DocumentMoniker": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.cpp",
+              "RelativeDocumentMoniker": "PLAYER.cpp",
+              "ToolTip": "D:\\github_my\\STL_Homework\\Homework\\PLAYER.cpp",
+              "RelativeToolTip": "PLAYER.cpp",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAWwKIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T07:34:09.708Z",
               "EditorCaption": ""
             }
           ]
