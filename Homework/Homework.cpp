@@ -110,18 +110,6 @@ int main()
 				++aCount;
 		}
 		auto e = std::chrono::high_resolution_clock::now();
-
-		std::cout << "걸린시간 : " << e - b << " / " << aCount << std::endl;
-
-		aCount = 0 ;
-		b = std::chrono::high_resolution_clock::now();
-		for (const Player& player : players) {
-			player.sortChar();
-			if (player.aCountChar2())
-				++aCount;
-		}
-		e = std::chrono::high_resolution_clock::now();
-
 		std::cout << "걸린시간 : " << e - b << " / " << aCount << std::endl;
 	}
 	

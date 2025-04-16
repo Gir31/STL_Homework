@@ -104,11 +104,6 @@ void Player::sortChar() const
 // p ¾ÈÀÇ a °¹¼ö count
 bool Player::aCountChar() const
 {
-	return (num > 9 && p[0] == p[9]);
-}
-
-bool Player::aCountChar2() const
-{
 	int count = std::count(p.get(), p.get() + num, 'a');
 
 	return count > 9;
