@@ -13,28 +13,28 @@ Player::Player() = default;
 // 바이너리 파일에서 읽어와 객체에 넣는 코드
 void Player::read(std::istream& is) 
 {
-	size_t trash;								// 쓰레기 값을 넣기위한 변수
+	//size_t trash;								// 쓰레기 값을 넣기위한 변수
 
-	is.read((char*)&name, sizeof(std::string));
-	is.read((char*)&score, sizeof(int));
-	// is.read((char*)&trash, sizeof(int));		// int와 size_t 사이의 바이트를 잡기위한 코드
-	is.seekg(4, std::ios::cur);					// 4바이트 스킵
+	//is.read((char*)&name, sizeof(std::string));S
+	//is.read((char*)&score, sizeof(int));
+	//// is.read((char*)&trash, sizeof(int));		// int와 size_t 사이의 바이트를 잡기위한 코드
+	//is.seekg(4, std::ios::cur);					// 4바이트 스킵
 
-	is.read((char*)&id, sizeof(size_t));
-	is.read((char*)&num, sizeof(size_t));
+	//is.read((char*)&id, sizeof(size_t));
+	//is.read((char*)&num, sizeof(size_t));
 
-	// is.read((char*)&trash, sizeof(size_t));		// pointer와 p의 값 사이의 바이트를 잡기위한 코드
-	is.seekg(8, std::ios::cur);						// 8바이트 스킵
+	//// is.read((char*)&trash, sizeof(size_t));		// pointer와 p의 값 사이의 바이트를 잡기위한 코드
+	//is.seekg(8, std::ios::cur);						// 8바이트 스킵
 
-	p.reset();
-	p = std::make_unique<char[]>(num);
-	is.read(p.get(), num);
-
-	//is.read((char*)this, sizeof(Player));
-
-	//p.release();
+	//p.reset();
 	//p = std::make_unique<char[]>(num);
 	//is.read(p.get(), num);
+
+	is.read((char*)this, sizeof(Player));
+
+	p.release();
+	p = std::make_unique<char[]>(num);
+	is.read(p.get(), num);
 }
 
 // 복사 생성자 & 복사할당연산자
@@ -153,20 +153,20 @@ std::ostream& operator<<(std::ostream& os, const Player& player)
 // id를 통해서 player를 찾고 출력하는 함수
 void findPlayerById(const std::vector<Player*>& v, const size_t& targetId)
 {
-	for (const Player* player : v) {
-		if (player->getId() == targetId) {
+	for (int i = 0; i < v.size(); ++i) {
+		if (v[i]->getId() == targetId) {
 
-			if (*v.begin() != player) {
+			if (i != 0) {
 				std::cout << "\033[33m" << "[Front Player]" << std::endl;
-				(player - 1)->show();
+				v[i - 1]->show();
 			}
 
 			std::cout << "\033[31m" << "[Target Player]" << std::endl;
-			player->show();
+			v[i]->show();
 
-			if (*(v.end()-1) != player) {
+			if (i != v.size()) {
 				std::cout << "\033[33m" << "[Back Player]" << "\033[0m" << std::endl;
-				(player + 1)->show();
+				v[i + 1]->show();
 			}
 
 			std::cout << std::endl;
